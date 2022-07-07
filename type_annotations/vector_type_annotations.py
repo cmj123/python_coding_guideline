@@ -8,10 +8,10 @@ import numpy as np
 import numbers
 from functools import total_ordering
 from math import sqrt 
-from typing import SupportsFloat
+from typing import SupportsFloat, Type
 from typing import Union
 
-# @total_ordering
+@total_ordering
 class Vector2D:
     '''Vector2D class to perform simple vector operations
     '''
@@ -150,15 +150,47 @@ class Vector2D:
         return Vector2D(x,y)
 
     def __mul__(self, other: Union[SupportsFloat, Vector2D]) -> Union[SupportsFloat, Vector2D]:
-        '''_summary_
+        '''Return the multiplication of the self vector and the other vector (or number) instance.
 
         Args:
-            other (Union[SupportsFloat, Vector2D]): _description_
+            other (Union[SupportsFloat, Vector2D]): Other vector instance or scaler value (right-hand-side of the operator)
 
         Returns:
-            Union[SupportsFloat, Vector2D]: _description_
+            Union[SupportsFloat, Vector2D]: The multiplication of the self vector and the other
+                vector(or number) instance.
         '''
-        pass
+        if isinstance(other, Vector2D):
+            return self.x * other.x + self.y * other.y 
+        elif isinstance(other, numbers.Real):
+            return Vector2D(self.x * other, self.y * other)
+        else:
+            raise TypeError('You must pass in a vector instance or an int/float number!')
+
+    
+    def __truediv__(self, other:SupportsFloat) -> Vector2D:
+        '''Return the multiplication of the self vector and the other vector(or number) instance.
+
+        Args:
+            other (SupportsFloat): Other vector instance or scaler value (right-hand-side of the operator)
+
+        Returns:
+            Vector2D: Other vector instance or scaler value (right-hand-side of the operator)
+
+        Raises:
+            ValueError: Division by zero.
+            TypeError: Not int/float passed in
+
+        Returns:
+            SupportsFloat: The multiplication of the self vector and the other vector(or number) instance.
+        '''
+        if isinstance(other, numbers.Real):
+            if other != 0.0:
+                return Vector2D(self.x/ other, self.y/other)
+            else:
+                raise ValueError('You cannot divide by zero!')
+        else:
+            raise TypeError('You must pass in an int/float value!')
+
 
 
     
@@ -172,4 +204,5 @@ if __name__ == "__main__":
     # print(bool(my_vector))
     # print(abs(my_vector))
     # print(my_vector.check_vector_types(my_vector))
-    print(my_vector.__sub__(Vector2D(90,10)))
+    # print(my_vector.__mul__(Vector2D(90,10)))
+    print(my_vector.__truediv__(0.000000000000001))
