@@ -7,7 +7,10 @@ import numpy as np
 import pandas as pd
 import pylint
 
-from .my_lib import Object, Object2, Object3
+from .my_lib import Object
+from .my_lib import Object2
+from .my_lib import Object3
+
 
 print('Hey')
 print('yo')
