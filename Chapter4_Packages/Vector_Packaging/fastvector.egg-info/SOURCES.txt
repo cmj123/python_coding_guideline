@@ -1,0 +1,10 @@
+setup.py
+fastvector/__init__.py
+fastvector/vector.py
+fastvector.egg-info/PKG-INFO
+fastvector.egg-info/SOURCES.txt
+fastvector.egg-info/dependency_links.txt
+fastvector.egg-info/requires.txt
+fastvector.egg-info/top_level.txt
+tests/__init__.py
+tests/test_vector.py

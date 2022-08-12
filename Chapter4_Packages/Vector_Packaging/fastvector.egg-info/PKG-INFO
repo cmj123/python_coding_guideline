@@ -1,0 +1,19 @@
+Metadata-Version: 1.2
+Name: fastvector
+Version: 0.1.0
+Summary: This is a simple vector python package.
+Home-page: UNKNOWN
+Author: Esuabom Dijemeni
+Author-email: e.dijemeni@gmail.com
+License: MIT
+Description: This is a simple vector python package.
+Platform: UNKNOWN
+Classifier: License :: OSI Approved
+Programming Language :: Python :: 3.7 :: 3.8
+Topic :: Software Development
+Operating System :: Microsoft :: Windows
+Operating System :: POSIX
+Operating System :: Unix
+Operating System :: MacOS
+
+Requires-Python: >=3.7, <=3.8
