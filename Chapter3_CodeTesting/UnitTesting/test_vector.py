@@ -1,5 +1,6 @@
 '''Test code
 '''
+from cmath import exp
 import unittest
 
 from .vector import Vector2D
@@ -41,8 +42,12 @@ class VectorTests(unittest.TestCase):
         expected_result2 = 0.0
         self.assertEqual(result2, expected_result2)
 
-
-
+    def test_div(self):
+        '''Tests the division operator
+        '''
+        result = self.v3 / 5 
+        expected_result = Vector2D(0.5, -0.5)
+        self.assertEqual(result, expected_result)
 
 if __name__ == '__main__':
     unittest.main()
