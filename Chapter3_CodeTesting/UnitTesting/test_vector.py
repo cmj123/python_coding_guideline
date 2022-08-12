@@ -2,7 +2,7 @@
 '''
 import unittest
 
-from vector import Vector2D
+from .vector import Vector2D
 
 class VectorTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -17,9 +17,13 @@ class VectorTests(unittest.TestCase):
         expected_result = Vector2D(-1,1)
         self.assertEqual(self.v2, expected_result)
 
-        
+    def test_add(self) -> None:
+        '''Test the addition operator
+        '''
+        pass
 
-from vector import Vector2D
+
+
 
 if __name__ == '__main__':
     unittest.main()
