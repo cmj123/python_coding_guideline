@@ -24,6 +24,13 @@ class VectorTests(unittest.TestCase):
         expected_result = Vector2D(-1,1)
         self.assertEqual(result, expected_result)
 
+    def test_sub(self):
+        '''Tests the subtraction operator
+        '''
+        result = self.v2 - self.v3
+        expected_result = Vector2D(-3.5, 3.5)
+        self.assertEqual(result, expected_result)
+
 
 
 
