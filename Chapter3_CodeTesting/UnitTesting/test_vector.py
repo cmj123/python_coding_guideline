@@ -20,7 +20,9 @@ class VectorTests(unittest.TestCase):
     def test_add(self) -> None:
         '''Test the addition operator
         '''
-        pass
+        result = self.v1 + self.v2
+        expected_result = Vector2D(-1,1)
+        self.assertEqual(result, expected_result)
 
 
 
