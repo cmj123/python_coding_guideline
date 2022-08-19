@@ -17,12 +17,17 @@ class VectorTests(unittest.TestCase):
         self.assertRaises(TypeError, Vector2D, 0, 'a')
         self.assertRaises(TypeError, Vector2D, 'B', 1)
 
-    # def test_equality(self) -> None:
-    #     '''Tests the equality operator
-    #     '''
-    #     self.assertNotEqual(self.v1, self.v2)
-    #     expected_result = Vector2D(-1,1)
-    #     self.assertEqual(self.v2, expected_result)
+    def test_comparison(self) -> None: 
+        # Test equality
+        self.assertNotEqual(self.v1, self.v2)
+        expected_result = Vector2D(-1, 1)
+        self.assertEqual(self.v2, expected_result)
+        # Test less
+        result = self.v1 + self.v2
+        self.assertLess(result, self.v3)
+        # Test greater
+        self.assertGreater(self.v3, result)
+        self.assertNotEqual(self.v3, self.v1)
 
     # def test_add(self) -> None:
     #     '''Test the addition operator
