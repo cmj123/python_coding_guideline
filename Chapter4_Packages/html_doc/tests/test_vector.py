@@ -29,6 +29,11 @@ class VectorTests(unittest.TestCase):
         self.assertGreater(self.v3, result)
         self.assertNotEqual(self.v3, self.v1)
 
+    def test_call(self) -> None:
+        result = self.v1()
+        expected_result = repr(self.v1)
+        self.assertEqual(result, expected_result)
+
     # def test_add(self) -> None:
     #     '''Test the addition operator
     #     '''
