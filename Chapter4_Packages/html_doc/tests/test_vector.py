@@ -73,12 +73,16 @@ class VectorTests(unittest.TestCase):
         # Invalid multiplication
         self.assertRaises(TypeError, self.v1.__mul__, 'a')
 
-    # def test_div(self):
-    #     '''Tests the division operator
-    #     '''
-    #     result = self.v3 / 5 
-    #     expected_result = Vector2D(0.5, -0.5)
-    #     self.assertEqual(result, expected_result)
+    def test_div(self):
+        '''Tests the division operator
+        '''
+        result = self.v3 / 5 
+        expected_result = Vector2D(0.5, -0.5)
+        self.assertEqual(result, expected_result)
+        
+        # Invalida division
+        self.assertRaises(TypeError, self.v1.__truediv__, 'a')
+        self.assertRaises(ValueError, self.v1.__truediv__, 0)
 
 if __name__ == '__main__':
     unittest.main()
