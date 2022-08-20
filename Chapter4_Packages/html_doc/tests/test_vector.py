@@ -1,6 +1,6 @@
 '''Test code
 '''
-
+import math
 import unittest
 
 from fastvector import Vector2D
@@ -32,6 +32,19 @@ class VectorTests(unittest.TestCase):
     def test_call(self) -> None:
         result = self.v1()
         expected_result = repr(self.v1)
+        self.assertEqual(result, expected_result)
+
+    def test_abs(self) -> None:
+        result = abs(self.v2)
+        expected_result = math.sqrt(2)
+        self.assertAlmostEqual(result, expected_result)
+
+    def test_bool(self) -> None:
+        result = bool(self.v1)
+        expected_result = False
+        self.assertEqual(result, expected_result)
+        result = bool(self.v2)
+        expected_result = True
         self.assertEqual(result, expected_result)
 
     # def test_add(self) -> None:
