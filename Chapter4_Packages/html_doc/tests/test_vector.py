@@ -47,29 +47,31 @@ class VectorTests(unittest.TestCase):
         expected_result = True
         self.assertEqual(result, expected_result)
 
-    # def test_add(self) -> None:
-    #     '''Test the addition operator
-    #     '''
-    #     result = self.v1 + self.v2
-    #     expected_result = Vector2D(-1,1)
-    #     self.assertEqual(result, expected_result)
+    def test_add(self) -> None:
+        '''Test the addition operator
+        '''
+        result = self.v1 + self.v2
+        expected_result = Vector2D(-1,1)
+        self.assertEqual(result, expected_result)
 
-    # def test_sub(self):
-    #     '''Tests the subtraction operator
-    #     '''
-    #     result = self.v2 - self.v3
-    #     expected_result = Vector2D(-3.5, 3.5)
-    #     self.assertEqual(result, expected_result)
+    def test_sub(self):
+        '''Tests the subtraction operator
+        '''
+        result = self.v2 - self.v3
+        expected_result = Vector2D(-3.5, 3.5)
+        self.assertEqual(result, expected_result)
 
-    # def test_mul(self):
-    #     '''Tests the multiplication operator
-    #     '''
-    #     result1 = self.v1 * 5
-    #     expected_result1 = Vector2D(0.0,0.0)
-    #     self.assertEqual(result1, expected_result1)
-    #     result2 = self.v1 * self.v2
-    #     expected_result2 = 0.0
-    #     self.assertEqual(result2, expected_result2)
+    def test_mul(self):
+        '''Tests the multiplication operator
+        '''
+        result1 = self.v1 * 5
+        expected_result1 = Vector2D(0.0,0.0)
+        self.assertEqual(result1, expected_result1)
+        result2 = self.v1 * self.v2
+        expected_result2 = 0.0
+        self.assertEqual(result2, expected_result2)
+        # Invalid multiplication
+        self.assertRaises(TypeError, self.v1.__mul__, 'a')
 
     # def test_div(self):
     #     '''Tests the division operator
