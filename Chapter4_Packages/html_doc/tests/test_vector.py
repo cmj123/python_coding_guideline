@@ -88,5 +88,9 @@ class VectorTests(unittest.TestCase):
         self.assertRaises(TypeError, Vector2D.check_vector_types, 13.37)
         self.assertRaises(TypeError, Vector2D.check_vector_types, '1337')
 
+    def test_str(self) -> None:
+        self.assertEqual(str(self.v1), '(0, 0)')
+        self.assertNotEqual(str(self.v1), '(0,0)')
+
 if __name__ == '__main__':
     unittest.main()
