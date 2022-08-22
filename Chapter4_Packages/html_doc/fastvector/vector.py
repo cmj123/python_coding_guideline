@@ -71,18 +71,6 @@ class Vector2D:
         '''
         return sqrt(self.x**2.0 + self.y**2.0)
 
-    def check_vector_types(self, vector: object) -> None:
-        '''Check if the vector is an instance of the Vector2D class.
-
-        Args:
-            vector (object): A vector instance.
-
-        Raises:
-            TypeError: If vector is not an instance of the Vector2D class.
-        '''
-        if not isinstance(self, Vector2D) or not isinstance(vector, Vector2D):
-            raise TypeError('You have to pass in two instances of the vector class!')
-
     def __eq__(self, other_vector: object) -> bool:
         '''Check if the vector instances have the same values.
 
@@ -183,3 +171,16 @@ class Vector2D:
                 raise ValueError('You cannot divide by zero!')
         else:
             raise TypeError('You must pass in an int/float value!')
+
+    @staticmethod
+    def check_vector_types(vector: object) -> None:
+        '''Check if the vector is an instance of the Vector2D class.
+
+        Args:
+            vector (object): A vector instance.
+
+        Raises:
+            TypeError: If vector is not an instance of the Vector2D class.
+        '''
+        if not isinstance(vector, Vector2D):
+            raise TypeError('You have to pass in two instances of the vector class!')
